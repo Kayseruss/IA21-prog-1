@@ -4,45 +4,28 @@ const rl = readline.createInterface({ input, output })
 const question = q => new Promise((rs, rj) => rl.question(q + ' ', a => rs(a)))
 
 void async function () {
-    let soma = 0
-    let count = 0
-    let media = 0
-
+    var soma = 0
+    var count = 0
+    var media = 0
+  
     while (true) {
-        let strNota = await question(`Digite o valor da ${count + 1}° nota ou N/n para cacular a média entre os valores inseridos:`)
-
+        var strNota = await question(`Digite o valor da ${count + 1}° nota ou N/n para calcular a média entre os valores inseridos -->`)
         if (strNota.toUpperCase() == 'N') {
             break
-        }
-
-        // RegEx = Regular Expression
-        if (/[A-z]/m.test(strNota)) {
-            console.log("Erro! não digite letras que não seja N/n.")
-            continue
-        }
-
-        let nota = parseFloat(strNota)
-
-        if (nota < 0) {
-            console.log("Erro! :( Digite novamente:")
-            continue
-        }
-
-        if (nota > 10) {
-            console.log("Erro! :( Digite novamente")
-            continue
-        }
-
+        }     
+        var nota = parseFloat(strNota)
         if (isNaN(nota)) {
-            console.log("Erro! :( Digite novamente")
+           console.log(`\n[ - ALERTA - ] - Digite numeros de 0 a 10 (NÃO DIGITE LETRAS)! \n`)
             continue
+    }
+        if (isNaN(nota) || nota < 0 || nota > 10){
+            console.log('\n[ - ALERTA -  ] - Digite numeros de 0 a 10 ou N/n para sair! \n')
+             continue
         }
-
         soma = soma + nota
         count++
     }
-
     media = soma / count
-    console.log(`[ RESULTADO ] A média de todos os valores informados são`, media)
+    console.log('\n[ - RESULTADO - ] - A média dos valores é ', media)
     process.exit()
 }()
