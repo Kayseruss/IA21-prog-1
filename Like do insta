@@ -1,1 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"> 
+<title> Instagram Like </title>
+<link rel="icon" href="icone.png" type="image/x-icon">
 
+    <style>
+         
+         main {
+            user-select: none;
+            border: 5px solid blueviolet;
+            border-radius: 30px;
+            box-shadow: 10px 10px 10px blueviolet;
+            display: contents;
+            cursor: pointer;
+            font-size: 5vh;
+            position: center;
+            width: 525px;
+            left: 500px;
+            background-color: white;
+            
+        }
+
+    
+    </style>
+<head>
+<body background="https://wallpaperaccess.com/full/4303428.png">
+
+     <div class="img">
+         <img src="https://logos-marcas.com/wp-content/uploads/2021/09/One-Piece-Logo.png" width="250px" height="150px">
+     </div>
+        
+ <main>
+
+        <img src="https://i.pinimg.com/originals/72/cf/6a/72cf6a5cf7764f0b6987320aa4cf1d75.png">
+        <h1><number>0</number></h1>
+        
+    </main>
+
+
+
+    <script>
+        const domMain = document.querySelector("main")
+        const domDivNum = domMain.querySelector("number")
+        let counter = 0
+        domMain.addEventListener("click", () => {
+            counter++
+            domDivNum.innerHTML = counter
+        })
+    </script>
+</body>
+
+
+</html>
