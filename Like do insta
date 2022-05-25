@@ -15,7 +15,7 @@
             display: contents;
             cursor: pointer;
             font-size: 5vh;
-            position: center;
+            position: right;
             width: 525px;
             left: 500px;
             background-color: white;
